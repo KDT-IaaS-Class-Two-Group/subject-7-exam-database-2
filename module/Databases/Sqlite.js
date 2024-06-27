@@ -1,4 +1,6 @@
 const Database = require("better-sqlite3");
+const fs = require('fs');
+const path = require('path');
 const DbPathCheck = require("./DbPathCheck");
 
 //Sqlite Query문 실행에 관한 메소드가 필요합니다.
