@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lethal Company</title>
-    <link rel="stylesheet" href="../css/styleTwo.css">
+    <link rel="stylesheet" href="/styleTwo.css">
   </head>
   <body>
     <div id="root">
@@ -14,7 +14,9 @@
       <main>
         <div class="mainHead">
           <h1>이번 주 가장 많이 판매된 폐기물</h1>
-            <button type="submit">더보기</button>
+          <form action="/list" method="GET">
+            <button type="submit" class="buyMoreBtn">더보기</button>
+          </form>
         </div>
         <div class="sellList">
           <div class="item">1</div>
@@ -33,7 +35,9 @@
         </div>
         <div class="mainHead">
           <h1>이번 주 가장 많이 구매된 상품</h1>
-          <button type="submit">더보기</button>
+          <form action="/list" method="GET">
+            <button type="submit" class="buyMoreBtn">더보기</button>
+          </form>
         </div>
         <div class="buyList">
           <div class="item">1</div>
