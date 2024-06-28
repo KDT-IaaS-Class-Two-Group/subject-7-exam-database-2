@@ -4,7 +4,7 @@ const path = require('path')
 
 
 
-let server = http.createServer((req, res)=>{
+let server = http.createServer((req, res)=>{    
 
   console.log(req.method,"  and  ",req.url)
 
@@ -59,7 +59,7 @@ let server = http.createServer((req, res)=>{
     }
     else if(req.url.split(".")[1] === "js"){
       // console.log(__dirname)
-      let jspath = path.join(__dirname,"js",req.url.split("/")[1])
+      let jspath = path.join(__dirname,"public","js",req.url.split("/")[1])
       // console.log(jspath)
       fs.readFile(jspath,"utf-8",(err,data)=>{
         if(err){
@@ -87,6 +87,20 @@ let server = http.createServer((req, res)=>{
           res.end()
         }
       })
+    }
+    else if(req.url.startsWith("/list")){
+      let landPath = path.join(__dirname,"public","html","list.html")
+      fs.readFile(landPath,(err,data)=>{
+        if(err){
+          console.log(err)
+          res.end("오류")
+        }else{
+          res.write(data)
+          res.end()
+          
+        }
+      })
+
     }
   }
 })
