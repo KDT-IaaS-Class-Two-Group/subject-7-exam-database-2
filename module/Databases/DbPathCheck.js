@@ -18,7 +18,7 @@ function DbPathCheck(path){
 
   else if(split.length === 2){
     //* 확장자가 붙어있다면 그대로 반환
-    if(split[1] === ".db") return path;
+    if(split[1] === "db") return path;
 
     //TODO 확장자가 잘못되어 있다면, Error를 throw할건지, 확장자를 수정할건지 선택하야됨.
     //if(split[1] !== ".db") return split[0] + ".db";
