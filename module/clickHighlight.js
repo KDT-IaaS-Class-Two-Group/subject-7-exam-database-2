@@ -1,5 +1,10 @@
-// * Event Control==============================
-export const evnet = function event(eventType){
+/**
+ * 클릭 이벤트를 담당하는 함수입니다. 이 함수는 root에 이벤트핸들러를 부여해서 이벤트 위임을 담당합니다.
+ * @param {*} selectColer : 선택된 요소의 배경색
+ * @param {*} baseColor : 원래대로 돌릴 배경석
+ */
+
+export const clickHighlight = (selectColer, baseColor) => {
 
   let isSelected;
 

@@ -1,8 +1,8 @@
-import { item } from "./data.js"
-import { styles } from "./style.js"
-import { evnet } from "./event.js"
+import { item } from "../../module/exampleData.js"
+import { styles } from "../../module/exampleStyle.js"
+import { clickHighlight } from "../../module/clickHighlight.js"
 
-evnet()
+clickHighlight()
 
 
 let itemEle = Object.entries(item)
