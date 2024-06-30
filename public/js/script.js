@@ -1,5 +1,5 @@
 import { reDirect } from "../../module/reDirect.js";
 
 document.addEventListener("DOMContentLoaded", ()=>{
-  reDirect("slide2.html",5000)
+  reDirect("/html/slide2.html",1000)
 })
