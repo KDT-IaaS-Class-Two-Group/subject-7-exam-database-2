@@ -1,17 +1,19 @@
 const Sqlite = require("./Databases/Sqlite");
+const EnumCreateTable = require("./Enum/EnumCreateTable");
 
 class CustomDB extends Sqlite{
   constructor(dbPath){
     super(dbPath);
-    this.CreateClass();
+    this.CreateTable();
   }
 
   //TODO 쿼리문 실행 메소드가 필요함.
   //TODO Issue#10 이 완료되면 작성하겠음.
-  CreateClass(){
-
+  CreateTable(){
+    this.runQuery(EnumCreateTable.ITEM_TABLE)
   }
 }
+
 
 const db = new CustomDB('mydatabase.db'); // 'mydatabase.db'라는 이름의 데이터베이스를 생성하거나 연결합니다.
 
@@ -113,3 +115,4 @@ db.createTableIfNotExists('PurchasedItems', purchasedItemTable); // 'PurchasedIt
 db.createTableIfNotExists('SoldItems', soldItemTable); // 'SoldItems' 테이블이 존재하지 않으면, 'soldItemTable'에 정의된 스키마를 기반으로 테이블을 생성합니다.
 
 db.close(); // 데이터베이스 연결을 종료합니다.
+

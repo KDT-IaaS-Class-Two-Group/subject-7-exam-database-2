@@ -3,71 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      body {
-        margin: 0;
-        background-color: black;
-        width: 100vw;
-        height: 100vh;
-      }
-      img {
-        width: 100vw;
-        height: 90vh;
-      }
-      #display {
-        position: relative;
-
-        /* border: 2px solid red; */
-        width: 100vw;
-        height: 100vh;
-        margin-top: 35px;
-      }
-      .fontA {
-        position: absolute;
-        color: white;
-        left: 30%;
-        top: 10%;
-        font-size: 1.5rem;
-      }
-      .fontB {
-        position: absolute;
-        color: white;
-        left: 30%;
-        top: 40%;
-        font-weight: bold;
-        font-size: 24px;
-      }
-      .roding {
-        width: 100vw;
-        height: 40px;
-        background-color: gray;
-      }
-      .roding > div {
-        width: 10vw;
-        height: 40px;
-        background-color: green;
-      }
-    </style>
+    <title>Lethal Company</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="display">
-      <img src="/Rectangle 1.png" alt="img" />
+    <div id="root">
+      <!-- <img src="./Rectangle 1.png" alt="img" /> -->
       <div class="fontA">
-        <h1>지구가 깨끗해지기까지 “”개의 쓰레기가 남았습니다</h1>
+        <h1>지구가 깨끗해지기까지 “”개의 쓰레기가 남았습니다.</h1>
       </div>
       <div class="fontB">
-        <p>
-          단결하라 시민들이여, 우리의 지구가 굶어가고 있다. 시민들은 각성하라.
+        <span>
+          단결하라 시민들이여, 우리의 지구가 굶어가고 있다. 시민들은 각성하라!
           지구를 지켜나가야할 시간이다.<br /><br />주변의 쓰레기를 주워라.
           이것만이 살길이다.<br />푸른 강산을 파괴하는자, 조국의 적이다.<br />쓰레기를
           보물로, 재활용은 혁명의 새로운 돌파구한 점의 자원도 헛되이 하지 마라,
           재활용으로 조국을 빛내자.
-        </p>
+        </span>
       </div>
-      <div class="roding">
-        <div></div>
+      <div class="loding">
+        <div class="innerLoading"></div>
       </div>
     </div>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

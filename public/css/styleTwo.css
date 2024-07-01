@@ -1,44 +1,44 @@
-html,body {
-  box-sizing: border-box;
-  margin: 0;
-  /* width: 100%; */
+*{
+  margin: 0px;
+  padding: 0px;
 }
-.header {
-  width: 100vw;
-  height: 50vh;
-}
-div {
-  position: relative;
-}
-.header > img {
-  width: 100vw;
-  height: 45vh;
+#root{
+  overflow: hidden;
 }
 
+.header {
+  width: 70vw;
+  height: 50vh;
+  margin-left: 15vw;
+  margin-top: 5vh;
+  background-color: bisque;
+}
+.header > img{
+  width: 100%;
+  height: 100%;
+}
 main {
-  position: relative;
   margin: 80px 100px;
   width: 100vw;
-  height: 100vh;
+  height: 60vh;
 }
-main h1 {
+h1 {
   padding-top: 30px;
 }
-.imgs {
+.buyList, .sellList{
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   padding-top: 20px;
-  gap: 30px;
-  width: 100vw;
-  /* height: 100vh; */
+  gap: 50px;
+  width: 100%;
+  overflow-x: auto;
+/* *최초 지시의 경우 hidden으로 지시를 받았으나 표현하고자 하는 레이아웃을 드러내고자 오토로 조정, 추후 지시 시 hidden으로 변경? */
 }
+
 .item{
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
   background-color: rgb(255, 135, 159);
-}
-main .list {
-  position: absolute;
-  top: 300px;
-  left: 2px;
+
 }
