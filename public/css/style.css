@@ -8,7 +8,7 @@
   }
   #root {
   position: relative;
-  background-image: url(background.png);
+  background-image: url(../resource/background.png);
   /* border: 2px solid red; */
   width: 100vw;
   height: 100vh;
