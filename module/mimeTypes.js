@@ -11,5 +11,6 @@ const mimeTypes = {
   txt: "text/plain",
   ico: "image/ico"
 };
+Object.freeze(mimeTypes)
 
 module.exports = mimeTypes;
