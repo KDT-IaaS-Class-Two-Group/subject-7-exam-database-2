@@ -6,7 +6,7 @@ const DbPathCheck = require('./DbPathCheck'); // DbPathCheck 함수 불러오기
 class Sqlite {
   constructor(dbName) {
     this.dbName = DbPathCheck(dbName); // dbName을 검증하고 확장자를 추가합니다.
-    this.db = this.connect(); // connect 메서드를 호출하여 데이터베이스에 연결합니다.
+    this.db = this.connect();
   }
 
   /**
@@ -14,21 +14,7 @@ class Sqlite {
    * @returns {Database} - SQLite 데이터베이스 객체
    */
   connect() {
-    try {
-      const dbPath = path.resolve(__dirname, this.dbName); // 데이터베이스 경로를 절대 경로로 변환합니다.
-
-      // 데이터베이스 파일이 존재하는지 확인
-      if (!fs.existsSync(dbPath)) { // 파일 시스템에서 데이터베이스 파일이 존재하는지 확인합니다.
-        console.log('Database not found, creating new database...'); // 파일이 없으면 새 데이터베이스를 생성합니다.
-      }
-
-      // 데이터베이스 객체 생성 및 연결
-      const db = new Database(dbPath, { verbose: console.log }); // 데이터베이스 객체를 생성하고 연결합니다.
-      return db; // 데이터베이스 객체를 반환합니다.
-    } catch (err) { // 오류가 발생하면
-      console.error('Error connecting to the database:', err.message); // 오류 메시지를 콘솔에 출력합니다.
-      throw err; // 예외를 던져 호출자에게 오류를 알립니다.
-    }
+    return new Database(this.dbName, { verbose: console.log }); // 데이터베이스 객체를 생성하고 연결합니다..
   }
 
   /**
