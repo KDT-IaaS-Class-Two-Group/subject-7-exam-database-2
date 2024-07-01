@@ -10,9 +10,13 @@ class CustomDB extends Sqlite{
   //TODO 쿼리문 실행 메소드가 필요함.
   //TODO Issue#10 이 완료되면 작성하겠음.
   CreateTable(){
-    this.runQuery(EnumCreateTable.ITEM_TABLE)
+    const EnumTableName = require("./Enum/EnumTableName")
+    this.createTableIfNotExists('Users', EnumTableName.usersTable);
+    this.createTableIfNotExists('Items', EnumTableName.itemsTable);
+    this.createTableIfNotExists('PurchaesItems', EnumTableName.purchasedItemTable);
+    this.createTableIfNotExists('SoldItems', EnumTableName.soldItemTable);
   }
 }
 
-// TEST
-// const customDB = new CustomDB("db/hello.db");
+const customDB = new CustomDB('db/test.db');
+module.exports = customDB;
