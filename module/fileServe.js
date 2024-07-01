@@ -14,8 +14,7 @@ const readFileModule = require('./readFileModule')
 const fileServe = (req,res,rootDir)=>{
   const decodedUrl = decodeURIComponent(req.url);
   const normalize = path.normalize(decodedUrl)
-  // console.log(normalize)
-  // console.log(decodedUrl)
+  const ext = path.extname(normalize).substring(1) // req.url에서 확장자 부분을 변수 값에 받습니다
 
   let filePath;
   if(req.url.startsWith("/module")){
@@ -25,11 +24,11 @@ const fileServe = (req,res,rootDir)=>{
     filePath = path.join(rootDir,"public",normalize)
     console.log(filePath)
   }
-  readFileModule(filePath,res)
+  readFileModule(filePath,ext,res)
 }
 
 
 
 module.exports = fileServe
 // let req = "/module/mimeType.js"
-// fileRead(req,"")
+// fileServe(req,)
