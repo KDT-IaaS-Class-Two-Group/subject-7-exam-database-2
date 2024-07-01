@@ -15,13 +15,14 @@ const readFileModule = (arguPath,res)=>{
   let mimeIndex = path.extname(arguPath).substring(1)
 
   fs.readFile(arguPath,(err,data)=>{
-    try {
+    if(err){
+      console.error(`readFile Error : ${err}`)
+      errorMsg(err, res)
+    
+    } else {
+      res.writeHead(200,{"content-Type": mimeType[mimeIndex]})
+      res.end(data)
 
-    res.writeHead(200,{"content-Type": mimeType[mimeIndex]})
-    res.end(data)
-
-    } catch (error) {
-      errorMsg(error,res)
     }
   })
 }
