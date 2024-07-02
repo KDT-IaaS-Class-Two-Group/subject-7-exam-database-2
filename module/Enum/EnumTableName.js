@@ -20,9 +20,10 @@ const EnumTableName = Object.freeze({
 itemsTable : `
   item_id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,
-  price REAL NOT NULL,
-  isSell BOOLEAN NOT NULL CHECK (isSell IN (0, 1)),
-  weight REAL,
+  min_price INTEGER NOT NULL,
+  max_price INTEGER,
+  is_sell BOOLEAN NOT NULL CHECK (is_sell IN (0, 1)),
+  weight INTEGER,
   type TEXT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 `,
