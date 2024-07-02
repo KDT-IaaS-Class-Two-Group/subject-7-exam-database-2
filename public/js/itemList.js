@@ -1,9 +1,10 @@
 import { item } from "../../module/exampleData.js"
 import { styles } from "../../module/exampleStyle.js"
 import { clickHighlight } from "../../module/clickHighlight.js"
+import { modalControl } from "../../module/modalControl.js";
 
 clickHighlight()
-
+modalControl()
 
 let itemEle = Object.entries(item)
 let rootStyle = Object.entries(styles.root)
@@ -31,6 +32,7 @@ for(let i = 0; i < rootStyle.length; i++){
 // * root.child==============================
 for(let i = 0; i < itemEle.length; i++){
   let makeDiv = document.createElement('div');
+  makeDiv.setAttribute("class", "item")
   root.appendChild(makeDiv);
   root.children[i].innerHTML = `${itemEle[i][0]}\n${itemEle[i][1]}`;
   
