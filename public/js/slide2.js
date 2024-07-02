@@ -1,5 +1,4 @@
-import ListRequest from "../../module/ListRequest"
+import {ListRequest} from "../../module/ListRequest.js"
 
-const itemListData = async () => {
-  return await ListRequest();
-}
+const itemListData = await ListRequest();
+console.log(itemListData);
