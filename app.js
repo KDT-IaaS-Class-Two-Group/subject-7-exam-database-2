@@ -10,26 +10,27 @@ let server = http.createServer((req, res)=>{
   console.log(req.method,"  and  ",req.url)
 
   if(req.method === "GET"){
-    if(req.url === "/"){
-      // console.log(__dirname)
-      let landPath = path.join(__dirname,"public","html","index.html")
-      // console.log(landPath)
-      fs.readFile(landPath,"utf-8",(err,data)=>{
-        if(err){
-          res.writeHead(500, {"content-type" : "text/plain"})
-          res.write("server error")
-        } else {
-          // console.log(data)
-          res.writeHead(200, {"content-type" : "text/html"})
-          res.write(data)
-          res.end()
-        }
-      })
-    }
-    else if(req.url === "/list"){
+    // if(req.url === "/"){
+    //   // console.log(__dirname)
+    //   let landPath = path.join(__dirname,"public","html","index.html")
+    //   // console.log(landPath)
+    //   fs.readFile(landPath,"utf-8",(err,data)=>{
+    //     if(err){
+    //       res.writeHead(500, {"content-type" : "text/plain"})
+    //       res.write("server error")
+    //     } else {
+    //       // console.log(data)
+    //       res.writeHead(200, {"content-type" : "text/html"})
+    //       res.write(data)
+    //       res.end()
+    //     }
+    //   })
+    // }
+    
+    if(req.url === "/list"){
       ItemList(res);
-    } 
-    else {
+    } else{
+      
       fileServe(req,res,__dirname)
     }
   }
