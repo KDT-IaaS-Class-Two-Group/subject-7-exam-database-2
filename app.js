@@ -2,7 +2,7 @@ const http = require('http')
 const fs = require('fs')
 const path = require('path')
 const fileServe = require('./module/fileServe')
-
+const ItemList = require('./module/ItemList');
 
 
 let server = http.createServer((req, res)=>{    
@@ -25,10 +25,12 @@ let server = http.createServer((req, res)=>{
           res.end()
         }
       })
-    } else {
-
+    }
+    else if(req.url === "/list"){
+      ItemList(res);
+    } 
+    else {
       fileServe(req,res,__dirname)
-
     }
   }
 })
