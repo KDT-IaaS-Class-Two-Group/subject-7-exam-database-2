@@ -14,13 +14,18 @@ const readFileModule = require('./readFileModule')
 const fileServe = (req,res,rootDir)=>{
   const decodedUrl = decodeURIComponent(req.url);
   const normalize = path.normalize(decodedUrl)
-  const ext = path.extname(normalize).substring(1) // req.url에서 확장자 부분을 변수 값에 받습니다
+  let ext = path.extname(normalize).substring(1) // req.url에서 확장자 부분을 변수 값에 받습니다
 
   let filePath;
-  if(req.url.startsWith("/module")){
+  if(req.url === "/"){
+    filePath = path.join(rootDir,"public","html","index.html")
+    ext = "html"
+  }
+  else if(req.url.startsWith("/module")){
     filePath = path.join(rootDir,normalize)
     console.log(filePath)
-  } else {
+  }
+  else if(req.url !== "/list"){
     filePath = path.join(rootDir,"public",normalize)
     console.log(filePath)
   }
