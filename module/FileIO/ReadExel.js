@@ -26,4 +26,5 @@ function ReadExel(path){
   return result
 }
 
-console.log(ReadExel("public/resource/exel/item_list.xlsx"));
+module.exports = ReadExel;
+//console.log(ReadExel("public/resource/exel/item_list.xlsx"));

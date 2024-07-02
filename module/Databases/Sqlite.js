@@ -25,8 +25,8 @@ class Sqlite {
   createTableIfNotExists(tableName, tableSchema) {
     try {
       const query = `CREATE TABLE IF NOT EXISTS ${tableName} (${tableSchema})`; // 테이블 생성 SQL 쿼리문 작성
-      this.runQuery(query); // runQuery 메서드를 호출하여 쿼리를 실행합니다.
-      console.log(`Table '${tableName}' is ready.`); // 테이블이 준비되었음을 콘솔에 출력합니다.
+      const result = this.runQuery(query); // runQuery 메서드를 호출하여 쿼리를 실행합니다.
+      return result;
     } catch (err) { // 오류가 발생하면
       console.error(`Error creating table '${tableName}':`, err.message); // 오류 메시지를 콘솔에 출력합니다.
       throw err; // 예외를 던져 호출자에게 오류를 알립니다.
