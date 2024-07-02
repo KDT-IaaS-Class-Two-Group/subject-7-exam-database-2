@@ -14,9 +14,9 @@
       <main>
         <div class="mainHead">
           <h1>이번 주 가장 많이 판매된 폐기물</h1>
-          <form action="/list" method="get">
-            <button type="submit" class="buyMoreBtn">더보기</button>
-          </form>
+          <a href="./itemList.html">
+            <button type="submit" class="sellMoreBtn">더보기</button>
+          </a>
         </div>
         <div class="sellList">
           <div class="item">1</div>
@@ -35,9 +35,9 @@
         </div>
         <div class="mainHead">
           <h1>이번 주 가장 많이 구매된 상품</h1>
-          <form action="/list" method="GET">
+          <a href="./itemList.html">
             <button type="submit" class="buyMoreBtn">더보기</button>
-          </form>
+          </a>
         </div>
         <div class="buyList">
           <div class="item">1</div>
@@ -56,6 +56,27 @@
         </div>
       </main>
     </div>
+
+       <!-- 모달 창 구조 -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="modalHeader">
+          <h2 id="modal-title">상품 제목</h2>
+          <span class="close-button">&times;</span>
+        </div>
+        <div class="modalMain">
+          <div class="modalImg">이미지</div>
+          <div class="modalDiscription">상세 설명</div>
+        </div>
+        <div class="modalFoot">
+          <div><button type="button">더미1</button></div>
+          <div><button type="button">더미2</button></div>
+        </div>
+        <!-- 모달 내용 -->
+      </div>
+    </div>
+
+    <script type="module" src="../js/slide2.js"></script>
   </body>
   <script src="../js/slide2.js" type="module"></script>
 </html>
