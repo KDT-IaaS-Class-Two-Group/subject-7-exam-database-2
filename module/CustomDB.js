@@ -12,12 +12,19 @@ class CustomDB extends Sqlite {
   CreateTable() {
     const EnumTableName = require("./Enum/EnumTableName")
     this.createTableIfNotExists('Users', EnumTableName.usersTable);
-    if(this.createTableIfNotExists('Items', EnumTableName.itemsTable)) this.InitData('Items', ReadExel("public/resource/exel/item_list.xlsx"));
+    this.createTableIfNotExists('Items', EnumTableName.itemsTable);
     this.createTableIfNotExists('PurchaesItems', EnumTableName.purchasedItemTable);
     this.createTableIfNotExists('SoldItems', EnumTableName.soldItemTable);
+
+    this.InitData('Items', ReadExel("public/resource/exel/item_list.xlsx"));
   }
 
   InitData(tableName, arrObj) {
+
+    const numData = this.get(`Select COUNT(*) as count From ${tableName}`).count;
+    //! 데이터가 있다는 것임으로 반환한다.
+    if(numData > 0) return;
+
     const ColumnIntoStr = (arrCol, add = "") => {
       let returnStr = ""
 
