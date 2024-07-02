@@ -4,8 +4,8 @@ const mimeType = require("./mimeTypes");
 const ItemList = async (res) => {
   try{
     const result = db.all("select * from items");
-    const res = JSON.stringify(result);
-    res.writeHead(200,{"content-Type": mimeType.json})
+    const data = JSON.stringify(result);
+    res.writeHead(200,{"content-Type": '${mimeType.json}'})
     res.end(data)
   } catch(err){
     res.statusCode = 400;
