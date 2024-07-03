@@ -1,0 +1,76 @@
+
+/* *모달 창 프로토 타입 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: #282828;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modalSection{
+  margin-bottom: 1.5vh;
+  border: 1px dashed orange;
+  width: 100%;
+}
+.modalHeader, .modalBody{
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px dashed orange;
+  width: 100%;
+}
+
+.modalHeader h2, .modalSection h3 {
+  margin: 0 0 10px 0;
+  color: orange;
+  text-align: center;
+}
+
+.modalSection p {
+  margin: 10px 0;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.close-button {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.Product-image {
+  width: 100%;
+  height: 20vh;
+  background: gray;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
