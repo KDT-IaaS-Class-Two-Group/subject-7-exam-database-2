@@ -17,14 +17,14 @@
   margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 40%;
+  width: 40vw;
   color: white;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.modalSection{
+.modalSection, .buySell{
   margin-bottom: 1.5vh;
   border: 1px dashed orange;
   width: 100%;
@@ -33,10 +33,10 @@
   margin-bottom: 20px;
   padding: 10px;
   border: 1px dashed orange;
-  width: 100%;
+  width: 40vw;
 }
 
-.modalHeader h2, .modalSection h3 {
+.modalHeader h2, .modalSection h3, .buySell h3 {
   margin: 0 0 10px 0;
   color: orange;
   text-align: center;
@@ -65,7 +65,7 @@
   text-decoration: none;
 }
 
-.Product-image {
+.Product-image img {
   width: 100%;
   height: 20vh;
   background: gray;
