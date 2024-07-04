@@ -2,6 +2,39 @@ import {ListRequest} from "../../module/ListRequest.js"
 import { modalControl } from "../../module/modalControl.js";
 const itemListData = await ListRequest();
 
+const modalConfig = {
+  id: 'modal',
+  class: [
+    'modal-content',
+    'close-button',
+    'modal-header',
+    'modal-image',
+    'product-image',
+    'modal-body',
+    'modal-section',
+    'buy-sell'
+  ],
+  contentParameter : 3
+}
+
+
+const modalFrame = (object)=>{
+
+const body = document.getElementsByTagName("body")[0]
+const modal = document.createElement('div')
+modal.setAttribute("id", object.id)
+body.appendChild(modal)
+
+
+  for(let i = 0; i < object.contentParameter; i++){
+    const div = document.createElement('div')
+
+  }
+
+}
+
+modalFrame(modalConfig)
+
 
 
 // JSON 배열을 받아서 최대 10개의 아이템을 생성하고 DOM에 추가하는 함수
@@ -75,7 +108,7 @@ itemsToCreate.forEach(item => {
       });
       
       // 각 아이템 클릭 이벤트 할당
-      modalControl(data);
+      // modalControl(data);
     }
     createItems(".sellList", itemListData)
    
