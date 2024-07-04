@@ -28,7 +28,7 @@ itemsTable : `
   weight INTEGER,
   type TEXT,
   src TEXT,
-  info TEXT
+  info TEXT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 `,
 /* 
