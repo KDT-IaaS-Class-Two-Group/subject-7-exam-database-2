@@ -1,6 +1,5 @@
-
 /* *모달 창 프로토 타입 */
-.modal {
+#modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -24,25 +23,31 @@
   flex-direction: column;
   align-items: center;
 }
-.modalSection, .buySell{
+
+.modal-section,
+.buy-sell {
   margin-bottom: 1.5vh;
   border: 1px dashed orange;
   width: 100%;
 }
-.modalHeader, .modalBody{
+
+.modal-header,
+.modal-body {
   margin-bottom: 20px;
   padding: 10px;
   border: 1px dashed orange;
   width: 40vw;
 }
 
-.modalHeader h2, .modalSection h3, .buySell h3 {
+.modal-header h2,
+.modal-section h3,
+.buy-sell h3 {
   margin: 0 0 10px 0;
   color: orange;
   text-align: center;
 }
 
-.modalSection p {
+.modal-section p {
   margin: 10px 0;
   line-height: 1.5;
   text-align: left;
@@ -65,7 +70,7 @@
   text-decoration: none;
 }
 
-.Product-image img {
+.product-image img {
   width: 100%;
   height: 20vh;
   background: gray;
