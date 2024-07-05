@@ -1,18 +1,22 @@
+import { Modal } from "./modalInstance.js";
+import { modalConfig } from "./modalConfig.js";
+
+const modalInstance = new Modal(modalConfig)
 /**
  * 모달 창을 제어하는 모듈입니다. 정적으로 작성되어 있는 모달 창의 id를 가져와서 활용합니다.
  * @param {*} itemListData DB에서 넘어온 데이터
  */
 
+
 export const modalControl = (itemListData) => {
   //#region 
-  const modal = document.getElementById("modal");
-  const modalTitle = document.getElementById("modal-title");
-  const modalImage = document.getElementById("modal-image");
-  const modalType = document.getElementById("modal-type");
-  const modalInfo = document.getElementById("modal-info");
-  const modalWeight = document.getElementById("modal-weight");
-  const modalMinPrice = document.getElementById("modal-min-price");
-  const modalMaxPrice = document.getElementById("modal-max-price");
+  const modalTitle = document.querySelector(".modal-header");
+  const modalImage = document.querySelector(".modal-image");
+  const modalType = document.querySelector(".modal-type");
+  const modalInfo = document.querySelector(".modal-info");
+  const modalWeight = document.querySelector(".modal-weight");
+  const modalMinPrice = document.querySelector(".modal-min-price");
+  const modalMaxPrice = document.querySelector(".modal-max-price");
 //#endregion
 
 
@@ -23,6 +27,7 @@ document.querySelectorAll(".item").forEach((item) => {
         if (data.item_id == itemId) {
           return data;
         }
+        console.log(itemData)
       });
 
       if (itemData) {
@@ -36,20 +41,7 @@ document.querySelectorAll(".item").forEach((item) => {
         // todo 이미지 설정 : 추후 DB에서 넘어올 이미지 링크로 대체
         modalImage.src = item.getAttribute("data-image");
 
-        modal.style.display = "block";
       }
     });
-  });
-
-  // 모달 닫기 버튼 클릭 시 모달 닫기
-  document.querySelector(".close-button").addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  // 모달 영역 바깥 클릭 시 모달 닫기
-  window.addEventListener("click", (event) => {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
   });
 };
