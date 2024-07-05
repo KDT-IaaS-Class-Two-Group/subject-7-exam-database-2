@@ -1,5 +1,4 @@
 const Database = require('better-sqlite3'); // better-sqlite3 모듈을 불러와 SQLite 데이터베이스와의 상호작용을 가능하게 합니다.
-const path = require('path'); // Node.js 기본 모듈 path를 불러와 파일 및 디렉토리 경로 작업을 도와줍니다.
 const fs = require('fs'); // Node.js 기본 모듈 fs를 불러와 파일 시스템 관련 작업을 처리합니다.
 const DbPathCheck = require('./DbPathCheck'); // DbPathCheck 함수 불러오기, 데이터베이스 경로를 검증하고 확장자를 추가합니다.
 
