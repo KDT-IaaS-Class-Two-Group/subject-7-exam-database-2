@@ -1,4 +1,4 @@
-const modalConfig = {
+export const modalConfig = {
   id: 'modal',
   class: [
     'modal-content',
