@@ -1,43 +1,14 @@
 import {ListRequest} from "../../module/ListRequest.js"
-import { modalControl } from "../../module/modalControl.js";
+// import { modalControl } from "../../module/modalControl.js";
+import { Modal } from "../../module/modalInstance.js";
+import { modalConfig } from "../../module/modalConfig.js";
+
+
+// modalInstance.openModal()
 const itemListData = await ListRequest();
 
-const modalConfig = {
-  id: 'modal',
-  class: [
-    'modal-content',
-    'close-button',
-    'modal-header',
-    'modal-image',
-    'product-image',
-    'modal-body',
-    'modal-section',
-    'buy-sell'
-  ],
-  contentParameter : 3
-}
+  // modalInstance.attachEventListener()
 
-
-const modalFrame = (object)=>{
-
-const body = document.getElementsByTagName("body")[0]
-const modal = document.createElement('div')
-modal.setAttribute("id", object.id)
-body.appendChild(modal)
-
-
-  for(let i = 0; i < object.contentParameter; i++){
-    const div = document.createElement('div')
-
-  }
-
-}
-
-modalFrame(modalConfig)
-
-
-
-// JSON 배열을 받아서 최대 10개의 아이템을 생성하고 DOM에 추가하는 함수
 
 function createItems(containerSelector, data) {
     const container = document.querySelector(containerSelector);
@@ -51,7 +22,6 @@ function createItems(containerSelector, data) {
 
     const itemsToCreate = data.filter((element)=>{return element["is_sell"]});
 
-    console.log(itemsToCreate)
    
 
 /**
@@ -70,7 +40,7 @@ const dataSet = (ele, objKey,data)=>{
 itemsToCreate.forEach(item => {
   // 아이템 요소 생성
   const itemElement = document.createElement('div');
-  itemElement.classList.add('item');
+  itemElement.classList.add("item")
   
   dataSet(itemElement,idIndex,item)
 
@@ -85,7 +55,7 @@ itemsToCreate.forEach(item => {
         // itemElement.setAttribute('data_max_price', item.max_price);
 
         const itemImg = document.createElement('div');
-        itemImg.setAttribute("class", 'itemImg');
+        itemImg.classList.add('itemImg');
 
         const itemDetail = document.createElement('div');
         itemDetail.classList.add('itemDetail');
@@ -99,21 +69,23 @@ itemsToCreate.forEach(item => {
         // 구조 조립
         itemDetail.appendChild(itemName);
         itemDetail.appendChild(itemPrice);
-
         itemElement.appendChild(itemImg);
         itemElement.appendChild(itemDetail);
 
         // 컨테이너에 추가
         container.appendChild(itemElement);
+
       });
       
       // 각 아이템 클릭 이벤트 할당
-      // modalControl(data);
     }
-    createItems(".sellList", itemListData)
-   
-      // 판매된 아이템 목록 생성
-      createItems('.sellList', itemListData);
 
-// 구매된 아이템 목록 생성 
-createItems('.buyList', itemListData);
+  createItems(".sellList", itemListData)
+  createItems('.buyList', itemListData);
+
+
+
+new Modal(modalConfig)
+  // console.log(modalInstance)
+  // console.dir(document.querySelector(".item"))
+  // modalInstance.attachEventListener()
