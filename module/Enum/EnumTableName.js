@@ -23,8 +23,12 @@ itemsTable : `
   min_price INTEGER NOT NULL,
   max_price INTEGER,
   is_sell BOOLEAN NOT NULL CHECK (is_sell IN (0, 1)),
+  conductive BOOLEAN NOT NULL CHECK (conductive IN (0, 1)),
+  battery BOOLEAN NOT NULL CHECK (battery IN (0, 1)),
   weight INTEGER,
   type TEXT,
+  src TEXT,
+  info TEXT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 `,
 /* 
