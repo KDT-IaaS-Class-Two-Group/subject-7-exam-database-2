@@ -24,8 +24,7 @@
   align-items: center;
 }
 
-.modal-section,
-.buy-sell {
+.modal-section, .buy-sell {
   margin-bottom: 1.5vh;
   border: 1px dashed orange;
   width: 100%;
@@ -78,4 +77,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.buy-sell > div{
+  display: flex;
+  justify-content: space-around;
+  align-items : center
+}
+.buy-sell > div > button{
+  width : 100px;
+  height : 50px;
+  margin-bottom: 10px;
 }
