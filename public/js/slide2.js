@@ -86,6 +86,15 @@ itemsToCreate.forEach(item => {
 
 
 new Modal(modalConfig)
+
+const updateModal = (itemListData)=>{
+  const item = document.getElementsByClassName("item")
+  console.log(item)
+
+
+}
+
+updateModal(itemListData)
   // console.log(modalInstance)
   // console.dir(document.querySelector(".item"))
   // modalInstance.attachEventListener()
