@@ -93,8 +93,36 @@ const updateModal = (itemListData)=>{
   item.forEach((element)=>{
     element.addEventListener("click",()=>{
       const elementId = element.getAttribute("data-item_id")
-      const itemid = itemListData.find((data)=>{return data.item_id === elementId})
-      console.log(itemid)
+      const targetData = itemListData.find((data)=>{return data.item_id == elementId})
+
+      //모달 내부 요소 가져오기
+      const headTitle = document.querySelector(".modal-header > h2")
+      headTitle.textContent = targetData.name
+
+      const modalImage = document.querySelector(".modal-image")
+      modalImage.src = targetData.src
+
+      const modalSection = document.querySelectorAll(".modal-section > h3")
+      modalSection[0].textContent = "information"
+      modalSection[1].textContent = "discription"
+      modalSection[2].textContent = "Price"
+      const sectionParagram = document.querySelectorAll(`.modal-section > p`)
+      console.log(sectionParagram)
+
+      const buySellTitle = document.querySelector(".buy-sell > h3")
+      buySellTitle.textContent = "buySell"
+      
+      const buySell = document.querySelector(".buy-sell")
+      const div = document.createElement("div")
+      buySell.appendChild(div)
+      for(let i = 0; i < 2; i++){
+        const btn = document.createElement("button")
+        div.appendChild(btn)
+        btn.setAttribute("type","button")
+      }
+      const buySellBtn = document.querySelectorAll(".buy-sell > div > button")
+      buySellBtn[0].textContent = "buy"
+      buySellBtn[1].textContent = "sell"
     })
   })
 
