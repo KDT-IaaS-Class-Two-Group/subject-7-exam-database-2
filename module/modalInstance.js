@@ -70,6 +70,21 @@ export class Modal {
     const buySellTitle = document.createElement('h3');
     this.buySell.appendChild(buySellTitle);
 
+    const div = document.createElement("div")
+    this.buySell.appendChild(div)
+    
+    const buySellBtn = []
+    for(let i = 0; i < 2; i++){
+      const btn = document.createElement("button")
+      div.appendChild(btn)
+      btn.setAttribute("type","button")
+      buySellBtn.push(btn)
+    }
+    // const buySellBtn = document.querySelectorAll(".buy-sell > div > button")
+    buySellBtn[0].textContent = "buy"
+    buySellBtn[1].textContent = "sell"
+
+
     // 요소들을 모아 배열로 관리
     const children = [
       this.closeButton,
