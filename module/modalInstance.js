@@ -91,8 +91,7 @@ export class Modal {
   }
 
   // 모달 열기
-  openModal(itemData) {
-    this.updateModal(itemData);
+  openModal() {
     this.modal.style.display = 'block';
   }
 
@@ -110,21 +109,9 @@ export class Modal {
       document.querySelectorAll('.item').forEach((element) => {
         // element.onclick = ()=>{console.log(1)}
         element.addEventListener("click", ()=>{
-          const itemId = element.getAttribute("data-item_id")
-          const itemData = itemListData.find((data)=>{return data.item_id === itemId})
-          this.openModal(itemData)}
+          this.openModal()}
       )
     })
-  }
-  updateModal(itemData) {
-    // 모달 요소를 업데이트하는 로직
-    this.headerTitle.textContent = itemData.name;
-    this.productImg.src = itemData.image || '';
-    this.sections.forEach((section, index) => {
-      section.sectionTitle.textContent = itemData.sections[index].title || '';
-      section.paragraph.textContent = itemData.sections[index].content || '';
-    });
-    this.buySellTitle.textContent = itemData.buySellTitle || '';
   }
 }
 
