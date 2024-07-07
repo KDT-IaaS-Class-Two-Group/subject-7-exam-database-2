@@ -6,6 +6,7 @@ import { modalConfig } from "../../module/modalConfig.js";
 
 // modalInstance.openModal()
 const itemListData = await ListRequest();
+console.log(itemListData)
 
   // modalInstance.attachEventListener()
 
@@ -88,8 +89,14 @@ itemsToCreate.forEach(item => {
 new Modal(modalConfig)
 
 const updateModal = (itemListData)=>{
-  const item = document.getElementsByClassName("item")
-  console.log(item)
+  const item = document.querySelectorAll(".item")
+  item.forEach((element)=>{
+    element.addEventListener("click",()=>{
+      const elementId = element.getAttribute("data-item_id")
+      const itemid = itemListData.find((data)=>{return data.item_id === elementId})
+      console.log(itemid)
+    })
+  })
 
 
 }
