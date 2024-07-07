@@ -106,27 +106,16 @@ const updateModal = (itemListData)=>{
       modalSection[0].textContent = "information"
       modalSection[1].textContent = "discription"
       modalSection[2].textContent = "Price"
-      
+
       const sectionParagram = document.querySelectorAll(`.modal-section > p`)
       console.log(sectionParagram)
 
       const buySellTitle = document.querySelector(".buy-sell > h3")
       buySellTitle.textContent = "buySell"
-      
-      const buySell = document.querySelector(".buy-sell")
-      const div = document.createElement("div")
-      buySell.appendChild(div)
-      for(let i = 0; i < 2; i++){
-        const btn = document.createElement("button")
-        div.appendChild(btn)
-        btn.setAttribute("type","button")
-      }
-      const buySellBtn = document.querySelectorAll(".buy-sell > div > button")
-      buySellBtn[0].textContent = "buy"
-      buySellBtn[1].textContent = "sell"
+
     })
   })
-
+  
 
 }
 
