@@ -91,7 +91,8 @@ export class Modal {
   }
 
   // 모달 열기
-  openModal() {
+  openModal(itemData) {
+    this.updateModal(itemData);
     this.modal.style.display = 'block';
   }
 
@@ -108,7 +109,10 @@ export class Modal {
       })
       document.querySelectorAll('.item').forEach((element) => {
         // element.onclick = ()=>{console.log(1)}
-        element.addEventListener("click", ()=>{this.openModal()}
+        element.addEventListener("click", ()=>{
+          const itemId = element.getAttribute("data-item_id")
+          const itemData = itemListData.find((data)=>{return data.item_id === itemId})
+          this.openModal(itemData)}
       )
     })
   }
