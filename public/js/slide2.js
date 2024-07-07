@@ -106,6 +106,7 @@ const updateModal = (itemListData)=>{
       modalSection[0].textContent = "information"
       modalSection[1].textContent = "discription"
       modalSection[2].textContent = "Price"
+      
       const sectionParagram = document.querySelectorAll(`.modal-section > p`)
       console.log(sectionParagram)
 
