@@ -112,7 +112,16 @@ export class Modal {
       )
     })
   }
-
+  updateModal(itemData) {
+    // 모달 요소를 업데이트하는 로직
+    this.headerTitle.textContent = itemData.name;
+    this.productImg.src = itemData.image || '';
+    this.sections.forEach((section, index) => {
+      section.sectionTitle.textContent = itemData.sections[index].title || '';
+      section.paragraph.textContent = itemData.sections[index].content || '';
+    });
+    this.buySellTitle.textContent = itemData.buySellTitle || '';
+  }
 }
 
 
