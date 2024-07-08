@@ -2,6 +2,7 @@ import {ListRequest} from "../../module/ListRequest.js"
 // import { modalControl } from "../../module/modalControl.js";
 import { Modal } from "../../module/modalInstance.js";
 import { modalConfig } from "../../module/modalConfig.js";
+import {updateModal} from "../../module/updateModal.js"
 
 
 // modalInstance.openModal()
@@ -45,15 +46,6 @@ itemsToCreate.forEach(item => {
   
   dataSet(itemElement,idIndex,item)
 
-        // itemElement.setAttribute('data_item_id', item.item_id);
-        // itemElement.setAttribute('data_name', item.name);
-        // itemElement.setAttribute('data_type', item.type);
-        // itemElement.setAttribute('data_info', item.info);
-        // itemElement.setAttribute('data_weight', item.weight);
-        // itemElement.setAttribute('data_conductive', item.conductive);
-        // itemElement.setAttribute('data_is_sell', item.is_sell ? "Yes" : "No");
-        // itemElement.setAttribute('data_min_price', item.min_price);
-        // itemElement.setAttribute('data_max_price', item.max_price);
 
         const itemImg = document.createElement('div');
         itemImg.classList.add('itemImg');
@@ -85,41 +77,7 @@ itemsToCreate.forEach(item => {
   createItems('.buyList', itemListData);
 
 
-
 new Modal(modalConfig)
 
-const updateModal = (itemListData)=>{
-  const item = document.querySelectorAll(".item")
-  item.forEach((element)=>{
-    element.addEventListener("click",()=>{
-      const elementId = element.getAttribute("data-item_id")
-      const targetData = itemListData.find((data)=>{return data.item_id == elementId})
-
-      //모달 내부 요소 가져오기
-      const headTitle = document.querySelector(".modal-header > h2")
-      headTitle.textContent = targetData.name
-
-      const modalImage = document.querySelector(".modal-image")
-      modalImage.src = targetData.src
-
-      const modalSection = document.querySelectorAll(".modal-section > h3")
-      modalSection[0].textContent = "information"
-      modalSection[1].textContent = "discription"
-      modalSection[2].textContent = "Price"
-
-      const sectionParagram = document.querySelectorAll(`.modal-section > p`)
-      console.log(sectionParagram)
-
-      const buySellTitle = document.querySelector(".buy-sell > h3")
-      buySellTitle.textContent = "buySell"
-
-    })
-  })
-  
-
-}
 
 updateModal(itemListData)
-  // console.log(modalInstance)
-  // console.dir(document.querySelector(".item"))
-  // modalInstance.attachEventListener()
