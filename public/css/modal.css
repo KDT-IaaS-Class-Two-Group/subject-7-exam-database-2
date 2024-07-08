@@ -1,4 +1,8 @@
 /* *모달 창 프로토 타입 */
+*{
+  margin: 0;
+  padding: 0;
+}
 #modal {
   display: none;
   position: fixed;
@@ -16,38 +20,51 @@
   margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 40vw;
+  width: 30%;
   color: white;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 400px;
 }
 
 .modal-section, .buy-sell {
   margin-bottom: 1.5vh;
-  border: 1px dashed orange;
   width: 100%;
 }
 
-.modal-header,
+.modal-header {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px dashed #fe5500;
+  width: 100%;
+  background-color: #fe5500;
+}
 .modal-body {
   margin-bottom: 20px;
   padding: 10px;
-  border: 1px dashed orange;
-  width: 40vw;
+  width: 100%;
+  border: 2px solid #fe5500;
 }
-
-.modal-header h2,
-.modal-section h3,
-.buy-sell h3 {
+.modal-header h2{
   margin: 0 0 10px 0;
-  color: orange;
+  color : black;
   text-align: center;
 }
 
+.modal-section h2,
+.buy-sell h2 {
+  margin: 0 0 10px 0;
+  color: #fe5500;
+}
+.modal-section h2{
+  margin: 0 0 10px 0;
+  color: #fe5500;
+  border-bottom : 1px dashed #fe5500;
+}
+
 .modal-section p {
-  margin: 10px 0;
   line-height: 1.5;
   text-align: left;
 }
@@ -68,23 +85,51 @@
   color: #aaa;
   text-decoration: none;
 }
-
+.product-image{
+  border: 1px dashed #fe5500;
+  padding : 10px;
+  margin-bottom: 10px;
+}
 .product-image img {
   width: 100%;
   height: 20vh;
   background: gray;
-  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.buy-sell > div{
+
+.buy-sell > div {
   display: flex;
   justify-content: space-around;
-  align-items : center
+  align-items: center;
 }
-.buy-sell > div > button{
-  width : 100px;
-  height : 50px;
+
+/* .buy-sell > div > button {
+  width: 100px;
+  height: 50px;
   margin-bottom: 10px;
+} */
+
+.technical, .market-value, .characteristics, .information{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.market-value, .information{
+  flex-direction: column;
+  text-align: center;
+}
+
+.add-to-cart, .buy-now{
+  width: 200px;
+  height: 100px;
+  border: 1px solid #fe5500;
+  background-color: #282828;
+  font-size: 1.5em;
+  color: #fe5500;
+  font-weight: bold;
+  box-shadow: #282828;
+}
+
+
