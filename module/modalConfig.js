@@ -8,7 +8,13 @@ export const modalConfig = {
     'product-image',
     'modal-body',
     'modal-section',
-    'buy-sell'
+    'buy-sell',
+    'additional-button',
+    'information',
+    'characteristics',
+    'market-value',
+    'technical',
+    'buy-now'
   ],
-  contentParameter : 3
-}
+  contentParameter: 4  // 섹션 개수 (INFORMATION, CHARACTERISTICS, MARKET VALUE, TECHNICAL)
+};
