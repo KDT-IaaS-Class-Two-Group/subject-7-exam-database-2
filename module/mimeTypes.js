@@ -9,7 +9,8 @@ const mimeTypes = {
   svg: "image/svg+xml",
   json: "application/json",
   txt: "text/plain",
-  ico: "image/ico"
+  ico: "image/ico",
+  webp: "image/webp"
 };
 Object.freeze(mimeTypes)
 
