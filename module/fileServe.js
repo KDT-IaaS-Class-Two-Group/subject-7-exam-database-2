@@ -25,9 +25,12 @@ const fileServe = (req,res,rootDir)=>{
     filePath = path.join(rootDir,normalize)
     console.log(filePath)
   }
-  else if(req.url !== "/list"){
+  else if(!req.url.startsWith("/public")){
     filePath = path.join(rootDir,"public",normalize)
     console.log(filePath)
+  }
+  else{
+    filePath = path.join(rootDir,normalize);
   }
   readFileModule(filePath,ext,res)
 }
