@@ -1,0 +1,110 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 50px;
+  padding: 0;
+}
+
+header .banner {
+  position: relative;
+  text-align: center;
+}
+
+header .banner img {
+  width: 100%;
+  height: auto;
+}
+
+header .discount-text {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 2em;
+  color: yellow;
+  font-weight: bold;
+}
+
+main {
+  padding: 0px;
+}
+
+.sales-section, .purchased-section {
+  margin-bottom: 40px;;
+}
+
+.sales-section{
+  margin-top: 40px;
+}
+
+.sales-section .section-header h2 {
+  font-size: 3em;
+  color: #FE8500;
+  margin-bottom: 20px;
+}
+
+.sales-section .section-header h3 {
+  font-size: 1em;
+  color: #FE8500;
+  margin-bottom: 20px;
+}
+
+.section-header {
+  display: flex;
+  white-space: nowrap;
+  justify-content : space-between;
+  align-items: flex-end;
+}
+
+.items-grid {
+  display: flex;
+  flex-wrap: nowrap; /* 요소들이 한 줄에 배치되도록 설정 */
+  /* overflow-x: auto;  */
+  /* grid-auto-flow: column; */
+  white-space: nowrap;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  height: auto;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.item {
+  width: 300px;
+  height: auto;
+  flex: 0 0 300px;
+}
+
+.purchased-section .section-header h2 {
+  font-size: 3em;
+  color: #36FF3E;
+  margin-bottom: 20px;
+}
+
+.purchased-section .section-header h3 {
+  font-size: 1em;
+  color: #36FF3E;
+  margin-bottom: 20px;
+}
+
+
+.purchased-section .item img {
+  border-color: #36FF3E
+}
+
+.item img {
+  border: 2px dashed #FE8500;
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  background-color: #1D2023;
+}
+
+.price {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
