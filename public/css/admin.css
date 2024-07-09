@@ -1,0 +1,15 @@
+#root{
+  display: grid;
+  grid-template-columns: repeat(10,1fr);
+}
+
+.dashBoard{
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1;
+}
+.rowElement {
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1;
+}
