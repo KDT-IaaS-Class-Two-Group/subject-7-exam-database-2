@@ -10,7 +10,7 @@ import { buyMainColor, sellMainColor } from "../static/css_color.js"
 const addr = `http://${window.location.host}/`;
 const modal_page = mapDOM.GetDOM("modal-page");
 
-export const ListClickEvent = (obj) => {
+export const MakeItemInfoModal = (obj) => {
   const minValueKey = obj.is_sell === 1 ? "최소가격" : "가격";
   const maxValueKey = obj.is_sell === 1 ? "최대가격" : "판매 가치"
   const maxValueVal = obj.is_sell === 1 ? obj["max_price"] : "0"
