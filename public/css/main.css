@@ -135,7 +135,7 @@ main {
 .modal {
   background-color: #1a1a1a;
   padding: 0;
-  width: 600px;
+  width: 500px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
   position: relative;
@@ -143,7 +143,7 @@ main {
 }
 
 .modal-main{
-  height: 950px;
+  height: 700px;
   overflow-y: hidden;
   border-width: 2px;
   border-style: solid;
@@ -164,8 +164,8 @@ main {
   /* border: 2px dashed #ff6600; */
   border-width: 2px;
   border-style: dashed;
-  width: 580px;
-  height: 300px;
+  width: 480px;
+  height: 180px;
   margin: 10px 10px 10px 10px;
   display: flex;
   justify-content: center;
@@ -173,8 +173,8 @@ main {
 }
 
 .modal-image-container img {
-  width: 580px;
-  height: 300px;
+  width: 480px;
+  height: 180px;
   object-fit: contain;
 }
 
@@ -191,7 +191,7 @@ main {
   border-bottom-width: 2px;
   border-bottom-style: dashed;
   font-weight: bold;
-  font-size: 1.7em;
+  font-size: 1.5rem;
   padding-bottom: 5px;
   margin-bottom: 5px;
 }
@@ -210,7 +210,7 @@ main {
 .key-value {
   display: flex;
   justify-content: center;
-  font-size: 1.4em;
+  font-size: 1rem;
   margin-bottom: 10px;
 }
 
@@ -248,7 +248,7 @@ main {
 
 .modal-double-button {
   margin-top: 10px;
-  height: 150px;
+  height: 100px;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -260,8 +260,32 @@ main {
   border-width: 2px;
   border-style: solid;
   font-weight: bold;
-  font-size: 1.7em;
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.modal-input-text {
+  background-color: #1a1a1a;
+  color: #0DEC15;
+  white-space: nowrap;
+  outline: none;
+  width: 100%;
+  border: 0;
+  transition: none;
+  animation: none;
+  caret-color: transparent;
+  font-size: 1.2rem;
+}
+
+.modal-input-text:focus {
+  outline: none;
+  transition: none;
+  animation: none;
+  caret-color: transparent;
+}
+
+.modal-input-text::placeholder{
+  color:#0DEC15;
 }
