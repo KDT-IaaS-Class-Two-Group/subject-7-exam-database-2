@@ -1,4 +1,4 @@
-import { ListClickEvent } from "../Controllers/ListClickEvent.js";
+import { MakeItemInfoModal } from "../Controllers/MakeItemInfoModal.js"
 import { ListItemComponent } from "../Components/ListItemComponent.js"
 
 const salesList = document.getElementById("sales-list");
@@ -13,7 +13,7 @@ export const AddObjIntoItemList = (items) => {
   //* 각 아이템 클릭에 대한 버튼 이벤트
   const btnClick = (obj) => {
     console.dir(obj);
-    ListClickEvent(obj);
+    MakeItemInfoModal(obj);
     // TODO: 모달창 뛰우기 이벤트 여기에 넣어 이용.
   }
 
