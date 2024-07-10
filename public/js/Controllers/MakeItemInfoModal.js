@@ -44,6 +44,6 @@ export const MakeItemInfoModal = (obj) => {
   const technicalSc = ModalSectionComponent("> TECHNICAL", technicalCp);
 
 
-  modal.Update(ModalComponent(`color:${color}`, ModalMainComponent(obj.name, `background-color:${color}`, imgSc, infoSc, charSc, marketSc, technicalSc), ModalDoubleBtnComponent("Add to cart", buttonText)));
+  modal.Update(ModalComponent(`color:${color}`, ModalMainComponent(obj.name, `background-color:${color}`, imgSc, infoSc, charSc, marketSc, technicalSc), ModalDoubleBtnComponent("Add to cart", buttonText, obj)));
   modal.DisplayOn();
 }
