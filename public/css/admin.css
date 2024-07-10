@@ -1,15 +1,37 @@
-#root{
-  display: grid;
-  grid-template-columns: repeat(10,1fr);
+*{
+  margin: 0;
+  padding: 0;  
 }
 
-.dashBoard{
-  display: flex;
-  justify-content: space-between;
-  grid-column: 1;
+#root{
+  display: grid;
+  grid-template-rows: repeat(10,1fr);
+  width: 95vw;
+  height: 90vw;
 }
-.rowElement {
+
+.dashBoard, .rowElement {
+  border: 0.5px solid rgba(255, 100, 100, 0.212);
+  overflow: hidden;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   grid-column: 1;
+  text-align: center;
+  height: 24px;
 }
+.dashBoard > span, .rowElement >span{
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* .rowElement {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  grid-column: 1;
+  text-align: center;
+  height: 18px;
+} */
