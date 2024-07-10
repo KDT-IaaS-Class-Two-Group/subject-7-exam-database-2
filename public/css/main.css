@@ -1,3 +1,8 @@
+:root {
+  --sell-color: #ff6600;
+  --buy-color: #36FF3E;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -43,13 +48,13 @@ main {
 
 .sales-section .section-header h2 {
   font-size: 3em;
-  color: #FE8500;
+  color: var(--sell-color);
   margin-bottom: 20px;
 }
 
 .sales-section .section-header h3 {
   font-size: 1em;
-  color: #FE8500;
+  color: var(--sell-color);
   margin-bottom: 20px;
 }
 
@@ -81,19 +86,19 @@ main {
 
 .purchased-section .section-header h2 {
   font-size: 3em;
-  color: #36FF3E;
+  color: var(--buy-color);
   margin-bottom: 20px;
 }
 
 .purchased-section .section-header h3 {
   font-size: 1em;
-  color: #36FF3E;
+  color: var(--buy-color);
   margin-bottom: 20px;
 }
 
 
 .purchased-section .item img {
-  border-color: #36FF3E
+  border-color: var(--buy-color)
 }
 
 .item img {
@@ -107,4 +112,156 @@ main {
 .price {
   margin-top: 10px;
   font-size: 1.2em;
+}
+
+.modal-page {
+  display: none; /* 기본적으로 숨김 */
+  position: fixed; /* 페이지 스크롤과 상관없이 항상 같은 위치 */
+  z-index: 1; /* 상위 레벨에 표시 */
+  left: 0;
+  top: 0;
+  width: 100%; /* 전체 너비 */
+  height: 100%; /* 전체 높이 */
+  overflow: hidden; 
+  background-color: rgba(0,0,0,0.5); /* 반투명 검은색 배경 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+}
+
+.modal * {
+  box-sizing: border-box;
+}
+
+.modal {
+  background-color: #1a1a1a;
+  padding: 0;
+  width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative;
+  /* border-color: #ff4500; */
+}
+
+.modal-main{
+  height: 950px;
+  overflow-y: hidden;
+  border-width: 2px;
+  border-style: solid;
+  /* border: 2px solid #ff6600; */
+}
+
+.modal-main-header {
+  /* background-color: #ff6600; */
+  color: #000;
+  padding: 10px;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.modal-image-container {
+  background-color: #000;
+  /* border: 2px dashed #ff6600; */
+  border-width: 2px;
+  border-style: dashed;
+  width: 580px;
+  height: 300px;
+  margin: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-image-container img {
+  width: 580px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.section {
+  padding-top: 10px;
+  margin: 0 10px 10px 10px;
+  text-align: left;
+}
+
+.section-title {
+  /* color: #ff6600; */
+  /* border-bottom: 2px dashed #ff6600; */
+
+  border-bottom-width: 2px;
+  border-bottom-style: dashed;
+  font-weight: bold;
+  font-size: 1.7em;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.section-content p {
+  margin: 5px 0;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 10px 10px 10px;
+}
+
+.key-value {
+  display: flex;
+  justify-content: center;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.label, .value {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  color: #E6E6E6;
+}
+
+.label {
+  justify-content: flex-end;
+  padding-right: 10px;
+  width: 50%;
+  align-items: flex-start;
+  font-weight: bold;
+}
+
+.value {
+  width: 50%;
+  justify-content: flex-start;
+  text-align: left;
+  padding-left: 10px;
+  border-left: 3px solid #4A4A4A;
+  word-break: break-all;
+  max-height: none;
+}
+
+.modal-single-button {
+  margin-top: 10px;
+  height: 150px;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.modal-double-button {
+  margin-top: 10px;
+  height: 150px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap : 10px
+}
+
+.modal-double-button > div {
+  /* border: 2px solid #ff6600; */
+  border-width: 2px;
+  border-style: solid;
+  font-weight: bold;
+  font-size: 1.7em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
