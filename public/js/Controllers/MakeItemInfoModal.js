@@ -6,9 +6,9 @@ import { ModalSectionComponent } from "../Components/ModalSectionComponent.js"
 import { mapDOM } from "../modules/GetDOM.js"
 import { ModalDoubleBtnComponent } from "../Components/ModalDoubleBtnComponent.js"
 import { buyMainColor, sellMainColor } from "../static/css_color.js"
+import { modal } from "./modal.js"
 
 const addr = `http://${window.location.host}/`;
-const modal_page = mapDOM.GetDOM("modal-page");
 
 export const MakeItemInfoModal = (obj) => {
   const minValueKey = obj.is_sell === 1 ? "최소가격" : "가격";
@@ -43,6 +43,7 @@ export const MakeItemInfoModal = (obj) => {
   const marketSc = ModalSectionComponent("> MARKETVALUESECTION", minValueCp, maxValueCp);
   const technicalSc = ModalSectionComponent("> TECHNICAL", technicalCp);
 
-  modal_page.innerHTML = ModalComponent(`color:${color}`, ModalMainComponent(obj.name, `background-color:${color}`, imgSc, infoSc, charSc, marketSc, technicalSc), ModalDoubleBtnComponent("Add to cart", buttonText));
-  modal_page.style.display = "flex";
+
+  modal.Update(ModalComponent(`color:${color}`, ModalMainComponent(obj.name, `background-color:${color}`, imgSc, infoSc, charSc, marketSc, technicalSc), ModalDoubleBtnComponent("Add to cart", buttonText)));
+  modal.DisplayOn();
 }
