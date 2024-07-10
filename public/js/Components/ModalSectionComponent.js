@@ -1,4 +1,4 @@
-export const ModalSectionComponent = (title, color, ...component) => {
+export const ModalSectionComponent = (title, ...component) => {
 
   component = component !== undefined ? component.join("") : "";
   
