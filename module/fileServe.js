@@ -18,7 +18,7 @@ const fileServe = (req,res,rootDir)=>{
 
   let filePath;
   if(req.url === "/"){
-    filePath = path.join(rootDir,"public","html","index.html")
+    filePath = path.join(rootDir,"public","html","admin.html")
     ext = "html"
   }
   else if(req.url.startsWith("/module")){
